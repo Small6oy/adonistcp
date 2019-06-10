@@ -27,7 +27,7 @@ That's all :)
 ## Config
 There is only one config setting, that is to define the environments in which the mongo should run.
 
-You have to create the `config/ussd.js` file and the following setting.
+You have to create the `config/tcp.js` file and the following setting.
 
 ```js
   'use strict'
