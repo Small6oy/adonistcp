@@ -7,10 +7,10 @@
 Start by installing it from npm.
 
 ```bash
-adonis install https://bitbucket.org/olemediagroup/ussd.git
+adonis install https://github.com/Small6oy/adonistcp.git
 
 # yarn
-adonis install https://bitbucket.org/olemediagroup/ussd.git --yarn
+adonis install https://github.com/Small6oy/adonistcp.git --yarn
 ```
 
 ## Register provider
@@ -18,7 +18,7 @@ Register the provider inside `start/app.js` file.
 
 ```js
 const providers = [
-  '@ole-connect/ussd/Provider'
+  'adonistcp/Provider'
 ]
 ```
 
@@ -35,12 +35,10 @@ You have to create the `config/ussd.js` file and the following setting.
   const Env = use('Env')
 
   module.exports = {
-    platform: Env.get('USSD_PLATFORM', 'infobip'),
-    msisdn: Env.get('USSD_SIMULATOR_MSISDN', '27716450629'),
-    dial_string: Env.get('USSD_SIMULATOR_DIAL_STRING', '*120*310*1#'),
-    routes: { 
-      "*120*310#" : { screen: "signIn" }
-    }
+    name: Env.get('APP_NAME', 'Adonis'),
+    type: Env.get('TCP_TYPE', 1),
+    port: Env.get('TCP_PORT', 1337),
+    host: Env.get('TCP_HOST', '127.0.0.1')
   }
 ```
 
@@ -51,7 +49,8 @@ You need to add the following .ENV settings, otherwise it will default
     ##########################################################
     # USSD
     ##########################################################
-    USSD_PLATFORM = infobip
-    USSD_SIMULATOR_MSISDN = 27716450629
-    USSD_SIMULATOR_DIAL_STRING = *120*310*1#
+    APP_NAME = Adonis ##Defaults to Adonis
+    TCP_TYPE = 1 or 2 ##1 For Server ##2 For Client
+    TCP_PORT = 1337 ## Defaults to 1337
+    TCP_HOST = localhost ## Defaults to localhost
 ```
