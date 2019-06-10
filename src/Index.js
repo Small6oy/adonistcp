@@ -26,8 +26,12 @@ class TCP {
         let type = settings.type;
         let name = settings.name;
 
-        if(type == 1) return new TCPServer({port, host})
-        return new TCPClient({port, host, name})
+        if(type == 1) { 
+          return new TCPServer({port, host}) 
+        } else {
+           TCPClient.connect({port, host, name})
+           return this.TCPClient
+        }
 
     } catch (ex) {
       log.error(`${tag} :: ${ex.message}`)
