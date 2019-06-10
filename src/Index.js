@@ -30,7 +30,7 @@ class TCP {
           return new TCPServer({port, host}) 
         } else {
            TCPClient.connect({port, host, name})
-           return this.TCPClient
+           return this.TCPClient = TCPClient
         }
 
     } catch (ex) {
