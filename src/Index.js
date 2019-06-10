@@ -27,12 +27,14 @@ class TCP {
         let name = settings.name;
 
         if(type == 1) { 
-          return new TCPServer({port, host}) 
+          this.TCPServer = new TCPServer({port, host}) 
         } else {
-           TCPClient.connect({port, host, name})
-           return this.TCPClient = TCPClient
+           let client = new TCPClient();
+           client.connect({port, host, name})
+           this.TCPClient = client;
         }
 
+        return this;
     } catch (ex) {
       log.error(`${tag} :: ${ex.message}`)
     }
