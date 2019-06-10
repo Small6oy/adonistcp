@@ -79,4 +79,4 @@ class TCPClient {
   }
 
 }
-module.exports = new TCPClient
+module.exports = TCPClient
