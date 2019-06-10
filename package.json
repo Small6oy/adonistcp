@@ -1,0 +1,11 @@
+{
+  "name": "adonistcp",
+  "version": "1.0.0",
+  "description": "> Custom TCP Server/Client Add-on For Adonis JS.",
+  "main": "Provider.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Godwin Gabriel Ndlovu",
+  "license": "ISC"
+}
